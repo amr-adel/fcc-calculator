@@ -77,7 +77,7 @@ html {
 #subtract {grid-area: 3 / 4;}
 #add {grid-area: 4 / 4;}
 #decimal {grid-area: 6 / 3;}
-#equal {grid-area: 5 / 4 / 7 / 5; height: auto; line-height: 20vh;}
+#equals {grid-area: 5 / 4 / 7 / 5; height: auto; line-height: 20vh;}
 
 #no0 {grid-area: 6 / 1 / 7 / 3;}
 #no1 {grid-area: 5 / 1;}
@@ -96,23 +96,23 @@ html {
 #subtract,
 #add,
 #decimal,
-#equal {
+#equals {
 /*    font-size: 20px;*/
 }
 
 #ac,
-#equal {
+#equals {
     color: #dfe6e9;
     background-color: #f16065;
 }
 
 #ac:hover,
-#equal:hover {
+#equals:hover {
     background-color: #e16065;
 }
 
 #ac:active,
-#equal:active {
+#equals:active {
     color: #f16065;
     background-color: #cfd6d9;
 }
