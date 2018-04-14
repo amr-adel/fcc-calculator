@@ -1,9 +1,21 @@
+    
+    const last = document.getElementById('line-wrap');
+    
 (function () {
+    
+    let equation = '';
+
+    function logger(key) {
+        equation += key;
+        last.lastElementChild.innerHTML = equation;
+//        console.log(equation);
+    }
     document.getElementById('calculator').addEventListener('click', function (btn) {
         if (btn.target.className === "btn") {
             switch (btn.target.id) {
                 case 'equals':
                     console.log(eval(equation));
+                    last.insertAdjacentHTML('beforeend', '<p class="line">= ' + eval(equation) + '</p>');
                     equation = '';
                     break;
                 case 'ac':
@@ -15,14 +27,49 @@
                 case 'multiply':
                     logger('*');
                     break;
+                case 'add':
+                    logger('+');
+                    break;
                 case 'subtract':
                     logger('-');
                     break;
                 case 'del':
                     equation = equation.slice(0, -1);
+                    last.lastElementChild.innerHTML = equation;
                     break;
-                default:
-                    logger(btn.target.innerHTML);
+                case 'decimal':
+                    logger('.');
+                    break;
+                case 'no0':
+                    logger('0');
+                    break;
+                case 'no1':
+                    logger('1');
+                    break;
+                case 'no2':
+                    logger('2');
+                    break;
+                case 'no3':
+                    logger('3');
+                    break;
+                case 'no4':
+                    logger('4');
+                    break;
+                case 'no5':
+                    logger('5');
+                    break;
+                case 'no6':
+                    logger('6');
+                    break;
+                case 'no7':
+                    logger('7');
+                    break;
+                case 'no8':
+                    logger('8');
+                    break;
+                case 'no9':
+                    logger('9');
+                    break;
             }
         }
     })
@@ -84,10 +131,7 @@
         }
     })
 
-    let equation = '';
-
-    function logger(key) {
-        equation += key;
-        console.log(equation);
-    }
 })();
+
+
+
