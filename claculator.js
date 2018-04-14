@@ -1,137 +1,121 @@
-    
-    const last = document.getElementById('line-wrap');
-    
 (function () {
     
-    let equation = '';
-
-    function logger(key) {
-        equation += key;
-        last.lastElementChild.innerHTML = equation;
-//        console.log(equation);
-    }
+    const screen = document.getElementById('line-wrap');
+    
+    
     document.getElementById('calculator').addEventListener('click', function (btn) {
         if (btn.target.className === "btn") {
             switch (btn.target.id) {
-                case 'equals':
-                    console.log(eval(equation));
-                    last.insertAdjacentHTML('beforeend', '<p class="line">= ' + eval(equation) + '</p>');
-                    equation = '';
+                case 'equals': calculator.equals();
                     break;
-                case 'ac':
-                    equation = '';
+                case 'ac': calculator.problemText = '';
                     break;
-                case 'divide':
-                    logger('/');
+                case 'divide': calculator.input('/');
                     break;
-                case 'multiply':
-                    logger('*');
+                case 'multiply': calculator.input('*');
                     break;
-                case 'add':
-                    logger('+');
+                case 'add': calculator.input('+');
                     break;
-                case 'subtract':
-                    logger('-');
+                case 'subtract': calculator.input('-');
                     break;
-                case 'del':
-                    equation = equation.slice(0, -1);
-                    last.lastElementChild.innerHTML = equation;
+                case 'del': calculator.backspace();
                     break;
-                case 'decimal':
-                    logger('.');
+                case 'decimal': calculator.input('.');
                     break;
-                case 'no0':
-                    logger('0');
+                case 'no0': calculator.input('0');
                     break;
-                case 'no1':
-                    logger('1');
+                case 'no1': calculator.input('1');
                     break;
-                case 'no2':
-                    logger('2');
+                case 'no2': calculator.input('2');
                     break;
-                case 'no3':
-                    logger('3');
+                case 'no3': calculator.input('3');
                     break;
-                case 'no4':
-                    logger('4');
+                case 'no4': calculator.input('4');
                     break;
-                case 'no5':
-                    logger('5');
+                case 'no5': calculator.input('5');
                     break;
-                case 'no6':
-                    logger('6');
+                case 'no6': calculator.input('6');
                     break;
-                case 'no7':
-                    logger('7');
+                case 'no7': calculator.input('7');
                     break;
-                case 'no8':
-                    logger('8');
+                case 'no8': calculator.input('8');
                     break;
-                case 'no9':
-                    logger('9');
+                case 'no9': calculator.input('9');
                     break;
             }
         }
     })
 
+    
     document.addEventListener("keydown", function (key) {
+
+        function KeyTo(id) {
+            document.getElementById(id).click();
+        }
+        
         switch (key.keyCode) {
-            case 96:
-                document.getElementById('no0').click();
+            case 96: KeyTo('no0');
                 break;
-            case 97:
-                document.getElementById('no1').click();
+            case 97: KeyTo('no1');
                 break;
-            case 98:
-                document.getElementById('no2').click();
+            case 98: KeyTo('no2');
                 break;
-            case 99:
-                document.getElementById('no3').click();
+            case 99: KeyTo('no3');
                 break;
-            case 100:
-                document.getElementById('no4').click();
+            case 100: KeyTo('no4');
                 break;
-            case 101:
-                document.getElementById('no5').click();
+            case 101: KeyTo('no5');
                 break;
-            case 102:
-                document.getElementById('no6').click();
+            case 102: KeyTo('no6');
                 break;
-            case 103:
-                document.getElementById('no7').click();
+            case 103: KeyTo('no7');
                 break;
-            case 104:
-                document.getElementById('no8').click();
+            case 104: KeyTo('no8');
                 break;
-            case 105:
-                document.getElementById('no9').click();
+            case 105: KeyTo('no9');
                 break;
             // =====================================================
-            case 8:
-                document.getElementById('del').click();
+            case 8: KeyTo('del');
                 break;
-            case 111:
-                document.getElementById('divide').click();
+            case 111: KeyTo('divide');
                 break;
-            case 106:
-                document.getElementById('multiply').click();
+            case 106: KeyTo('multiply');
                 break;
-            case 109:
-                document.getElementById('subtract').click();
+            case 109: KeyTo('subtract');
                 break;
-            case 107:
-                document.getElementById('add').click();
+            case 107: KeyTo('add');
                 break;
-            case 110:
-                document.getElementById('decimal').click();
+            case 110: KeyTo('decimal');
                 break;
-            case 13:
-                document.getElementById('equals').click();
+            case 13: KeyTo('equals');
                 break;
         }
-    })
+    });
+    
+    
+    const calculator = {
+        input: function(key) {
+            this.problemText += key;
+            this.output();
+        },
+        problemText: '',
+        result: function() {
+            return eval(this.problemText);
+        },
+        equals: function () {
+            if (this.result() !== undefined) {
+                screen.insertAdjacentHTML('beforeend', '<p class="line">= ' + this.result() + '</p>');
+                this.problemText = '';
+            }
+        },
+        backspace: function() {
+            this.problemText = this.problemText.slice(0, -1);
+            this.output();
+        },
+        output: function() {
+            screen.lastElementChild.innerHTML = this.problemText;
+        }
+    }
 
+    
 })();
-
-
-

@@ -14,10 +14,9 @@ html {
 
 .calculator {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 20vh 1fr 1fr 1fr 1fr 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 20vh repeat(5, 1fr);
+    grid-gap: 10px;
     width: 80vw;
     max-width: 600px;
     margin: 10vh auto 0;
