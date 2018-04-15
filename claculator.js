@@ -8,7 +8,7 @@
             switch (btn.target.id) {
                 case 'equals': calculator.equals(calculator.result());
                     break;
-                case 'ac': calculator.problemText = '';
+                case 'ac': calculator.clear();
                     break;
                 case 'divide': calculator.input('÷');
                     break;
@@ -94,36 +94,55 @@
     
     
     const calculator = {
+        problemText: '',
+        tempResult: '',
+        
         input: function(key) {
             if (key === '÷' || key === '-' || key === '+' || key === '×') {
                 this.problemText += this.tempResult;
             }
             this.problemText += key;
+            this.tempResult = '';
             this.output();
         },
-        problemText: '',
+        
         result: function() {
             return eval(this.problemText.replace(/×/g, '*').replace(/÷/g, '/'));
         },
+        
         equals: function (result) {
             if (result !== undefined) {
-                screen.insertAdjacentHTML('beforeend', '<p class="line">= ' + result + '</p>');
-                if (screen.children.length > 2) {
-                    screen.children[0].remove();
-                }
+                this.output(true, result);
                 this.tempResult = result;
                 this.problemText = '';
             }
         },
-        tempResult: '',
+        
         backspace: function() {
-            this.problemText = this.problemText.slice(0, -1);
-            this.output();
+            if (screen.lastElementChild.innerText.indexOf('=') === -1) {
+                this.problemText = this.problemText.slice(0, -1);
+                this.output();
+            }
         },
-        output: function() {
-            screen.lastElementChild.innerHTML = this.problemText;
+        
+        output: function(newLine = false, output) {
+            if (newLine) {
+                screen.insertAdjacentHTML('beforeend', '<p class="line">= ' + output + '</p>');
+            } else if (screen.lastElementChild.innerText.indexOf('=') !== -1) {
+                screen.insertAdjacentHTML('beforeend', '<p class="line">' + this.problemText + '</p>');
+            } else {
+                screen.lastElementChild.innerHTML = this.problemText;
+            }
+            
+            if (screen.children.length > 3) {
+                screen.children[0].remove();
+            }
+        },
+        
+        clear: function () {
+            screen.innerHTML = '<p class="line">0</p>';
         }
-    }
+    } // End of calculator
 
     
 })();
