@@ -69,7 +69,7 @@ html {
 	user-select: none;
 }
 
-#ac {grid-area: 2 / 1;}
+#ac {grid-area: 2 / 1; letter-spacing: 2px;}
 #del {grid-area: 2 / 2;}
 #divide {grid-area: 2 / 3;}
 #multiply {grid-area: 2 / 4;}

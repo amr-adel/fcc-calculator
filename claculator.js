@@ -6,13 +6,13 @@
     document.getElementById('calculator').addEventListener('click', function (btn) {
         if (btn.target.className === "btn") {
             switch (btn.target.id) {
-                case 'equals': calculator.equals();
+                case 'equals': calculator.equals(calculator.result());
                     break;
                 case 'ac': calculator.problemText = '';
                     break;
-                case 'divide': calculator.input('/');
+                case 'divide': calculator.input('÷');
                     break;
-                case 'multiply': calculator.input('*');
+                case 'multiply': calculator.input('×');
                     break;
                 case 'add': calculator.input('+');
                     break;
@@ -95,19 +95,27 @@
     
     const calculator = {
         input: function(key) {
+            if (key === '÷' || key === '-' || key === '+' || key === '×') {
+                this.problemText += this.tempResult;
+            }
             this.problemText += key;
             this.output();
         },
         problemText: '',
         result: function() {
-            return eval(this.problemText);
+            return eval(this.problemText.replace(/×/g, '*').replace(/÷/g, '/'));
         },
-        equals: function () {
-            if (this.result() !== undefined) {
-                screen.insertAdjacentHTML('beforeend', '<p class="line">= ' + this.result() + '</p>');
+        equals: function (result) {
+            if (result !== undefined) {
+                screen.insertAdjacentHTML('beforeend', '<p class="line">= ' + result + '</p>');
+                if (screen.children.length > 2) {
+                    screen.children[0].remove();
+                }
+                this.tempResult = result;
                 this.problemText = '';
             }
         },
+        tempResult: '',
         backspace: function() {
             this.problemText = this.problemText.slice(0, -1);
             this.output();
