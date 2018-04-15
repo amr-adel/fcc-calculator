@@ -140,6 +140,8 @@
         },
         
         clear: function () {
+            this.problemText =  '';
+            this.tempResult = '';
             screen.innerHTML = '<p class="line">0</p>';
         }
     }
