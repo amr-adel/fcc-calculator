@@ -5,7 +5,7 @@
 }
 
 html {
-    height: 100%;
+    min-height: 100vh;
     font-family: 'PT Sans', sans-serif;
     font-size: 18px;
     background-image: linear-gradient(to top right, #74b9ff, #00b894);
@@ -15,11 +15,12 @@ html {
 .calculator {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 20vh repeat(5, 1fr);
+    grid-template-rows: 190px repeat(5, 1fr);
     grid-gap: 10px;
     width: 80vw;
     max-width: 600px;
-    margin: 10vh auto 0;
+    min-width: 320px;
+    margin: 5vh auto 0;
     padding: 10px;
     background-color: rgba(178, 190, 195, .6);
     box-shadow: 0 20px 60px rgba(99, 110, 114, .2);
@@ -37,6 +38,16 @@ html {
     color: #b2bec3;
     position: relative;
     overflow: hidden;
+}
+
+.title {
+    color: #e16065;
+    font-weight: 400;
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #cfd6d9;
 }
 
 .line-wrap {
@@ -126,9 +137,36 @@ html {
     background-color: #e16065;
 }
 
+/* ================================================================= */
+
+.footer__follow {
+    text-align: center;
+    cursor: default;
+    margin-top: 1.5vh;
+}
+
+.footer__follow a {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    font-size: 20px;
+    fill: #dfe6e9;
+    margin: 7px;
+    transition: fill .2s ease-out;
+}
+
+.footer__follow a:last-child {
+    width: 24px;
+    margin-left: 2px;
+}
+
+.footer__follow a:hover {
+    fill: #e16065;
+}
+
+
 @media screen and (max-width: 414px) {
     .calculator {
         width: 95vw;
-        margin: 5vh auto;
     }
 }

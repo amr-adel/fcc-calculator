@@ -142,7 +142,7 @@
         clear: function () {
             screen.innerHTML = '<p class="line">0</p>';
         }
-    } // End of calculator
+    }
 
     
 })();
