@@ -27,7 +27,7 @@ html {
     border-radius: 3px;
 }
 
-.screen {
+.display {
     grid-area: 1 / 1 / 2 / 5;
     background-color: #dfe6e9;
     border-radius: 3px;
@@ -80,7 +80,7 @@ html {
 	user-select: none;
 }
 
-#ac {grid-area: 2 / 1; letter-spacing: 2px;}
+#clear {grid-area: 2 / 1; letter-spacing: 2px;}
 #del {grid-area: 2 / 2;}
 #divide {grid-area: 2 / 3;}
 #multiply {grid-area: 2 / 4;}
@@ -89,16 +89,16 @@ html {
 #decimal {grid-area: 6 / 3;}
 #equals {grid-area: 5 / 4 / 7 / 5; height: auto; line-height: 20vh;}
 
-#no0 {grid-area: 6 / 1 / 7 / 3;}
-#no1 {grid-area: 5 / 1;}
-#no2 {grid-area: 5 / 2;}
-#no3 {grid-area: 5 / 3;}
-#no4 {grid-area: 4 / 1;}
-#no5 {grid-area: 4 / 2;}
-#no6 {grid-area: 4 / 3;}
-#no7 {grid-area: 3 / 1;}
-#no8 {grid-area: 3 / 2;}
-#no9 {grid-area: 3 / 3;}
+#zero {grid-area: 6 / 1 / 7 / 3;}
+#one {grid-area: 5 / 1;}
+#two {grid-area: 5 / 2;}
+#three {grid-area: 5 / 3;}
+#four {grid-area: 4 / 1;}
+#five {grid-area: 4 / 2;}
+#six {grid-area: 4 / 3;}
+#seven {grid-area: 3 / 1;}
+#eight {grid-area: 3 / 2;}
+#nine {grid-area: 3 / 3;}
 
 #del,
 #divide,
@@ -110,18 +110,18 @@ html {
 /*    font-size: 20px;*/
 }
 
-#ac,
+#clear,
 #equals {
     color: #dfe6e9;
     background-color: #f16065;
 }
 
-#ac:hover,
+#clear:hover,
 #equals:hover {
     background-color: #e16065;
 }
 
-#ac:active,
+#clear:active,
 #equals:active {
     color: #f16065;
     background-color: #cfd6d9;

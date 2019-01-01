@@ -8,7 +8,7 @@
             switch (btn.target.id) {
                 case 'equals': calculator.equals(calculator.result());
                     break;
-                case 'ac': calculator.clear();
+                case 'clear': calculator.clear();
                     break;
                 case 'divide': calculator.input('÷');
                     break;
@@ -22,25 +22,25 @@
                     break;
                 case 'decimal': calculator.input('.');
                     break;
-                case 'no0': calculator.input('0');
+                case 'zero': calculator.input('0');
                     break;
-                case 'no1': calculator.input('1');
+                case 'one': calculator.input('1');
                     break;
-                case 'no2': calculator.input('2');
+                case 'two': calculator.input('2');
                     break;
-                case 'no3': calculator.input('3');
+                case 'three': calculator.input('3');
                     break;
-                case 'no4': calculator.input('4');
+                case 'four': calculator.input('4');
                     break;
-                case 'no5': calculator.input('5');
+                case 'five': calculator.input('5');
                     break;
-                case 'no6': calculator.input('6');
+                case 'six': calculator.input('6');
                     break;
-                case 'no7': calculator.input('7');
+                case 'seven': calculator.input('7');
                     break;
-                case 'no8': calculator.input('8');
+                case 'eight': calculator.input('8');
                     break;
-                case 'no9': calculator.input('9');
+                case 'nine': calculator.input('9');
                     break;
             }
         }
@@ -54,25 +54,25 @@
         }
         
         switch (key.keyCode) {
-            case 96: KeyTo('no0');
+            case 96: KeyTo('zero');
                 break;
-            case 97: KeyTo('no1');
+            case 97: KeyTo('one');
                 break;
-            case 98: KeyTo('no2');
+            case 98: KeyTo('two');
                 break;
-            case 99: KeyTo('no3');
+            case 99: KeyTo('three');
                 break;
-            case 100: KeyTo('no4');
+            case 100: KeyTo('four');
                 break;
-            case 101: KeyTo('no5');
+            case 101: KeyTo('five');
                 break;
-            case 102: KeyTo('no6');
+            case 102: KeyTo('six');
                 break;
-            case 103: KeyTo('no7');
+            case 103: KeyTo('seven');
                 break;
-            case 104: KeyTo('no8');
+            case 104: KeyTo('eight');
                 break;
-            case 105: KeyTo('no9');
+            case 105: KeyTo('nine');
                 break;
             // =====================================================
             case 8: KeyTo('del');
