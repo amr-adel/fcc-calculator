@@ -92,25 +92,65 @@
         }
     });
     
-    
     const calculator = {
+        side: '',
         problemText: '',
         tempResult: '',
         
         input: function(key) {
             if (key === '÷' || key === '-' || key === '+' || key === '×') {
-                this.problemText += this.tempResult;
+
+                if ('÷-+×'.includes(this.problemText[(this.problemText.length - 1)]) && this.side === '') {
+                    this.problemText = this.problemText.slice(0, -1);
+                    this.problemText += key;
+                }
+
+                if (this.side === '') {
+                    if (this.problemText === '') {
+                        this.problemText = this.tempResult;
+                        this.tempResult = '';
+                        this.problemText += key;
+                    }
+                } else {
+                    this.problemText += this.side;
+                    this.side = '';
+                    this.problemText += key;
+                }
             }
 
-            if (key === '0' && this.problemText === '0') {
-                return null;
+            if ('0123456789'.includes(key)) {
+                this.tempResult = '';
+                if (this.side === '0' && key === '0') {
+                    return null
+                }
+
+                if (this.side === '0') {
+                    this.side = '';
+                }
+
+                this.side += key;
             }
-            this.problemText += key;
-            this.tempResult = '';
-            this.output(this.problemText);
+
+            if (key === '.') {
+                this.tempResult = '';
+                if (this.side === '' || this.side === '0') {
+                    this.side = '0';
+                }
+
+                if (this.side.includes('.')) {
+                    return null
+                }
+
+                this.side += key;
+            }
+
+            // this.side += key;
+            this.output(this.problemText + this.side);
         },
         
         result: function() {
+            this.problemText += this.side;
+            this.side = '';
             return eval(this.problemText.replace(/×/g, '*').replace(/÷/g, '/'));
         },
         
@@ -135,6 +175,7 @@
         },
         
         clear: function () {
+            this.side = '';
             this.problemText =  '';
             this.tempResult = '';
             display.innerHTML = '0';
