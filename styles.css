@@ -31,13 +31,14 @@ html {
     grid-area: 1 / 1 / 2 / 5;
     background-color: #dfe6e9;
     border-radius: 3px;
-    line-height: 32px;
     letter-spacing: 4px;
     padding: 15px 20px;
     text-align: right;
-    color: #b2bec3;
     position: relative;
     overflow: hidden;
+    font-size: 30px;
+    color: #636e72;
+    line-height: 46px;
 }
 
 .title {

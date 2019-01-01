@@ -101,6 +101,10 @@
             if (key === '÷' || key === '-' || key === '+' || key === '×') {
                 this.problemText += this.tempResult;
             }
+
+            if (key === '0' && this.problemText === '0') {
+                return null;
+            }
             this.problemText += key;
             this.tempResult = '';
             this.output(this.problemText);
