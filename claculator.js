@@ -1,6 +1,6 @@
 (function () {
     
-    const screen = document.getElementById('line-wrap');
+    const display = document.getElementById('display');
     
     
     document.getElementById('calculator').addEventListener('click', function (btn) {
@@ -103,7 +103,7 @@
             }
             this.problemText += key;
             this.tempResult = '';
-            this.output();
+            this.output(this.problemText);
         },
         
         result: function() {
@@ -112,37 +112,28 @@
         
         equals: function (result) {
             if (result !== undefined) {
-                this.output(true, result);
+                this.output(result);
+                display.innerHTML = result
                 this.tempResult = result;
                 this.problemText = '';
             }
         },
         
         backspace: function() {
-            if (screen.lastElementChild.innerText.indexOf('=') === -1) {
+            if (display.lastElementChild.innerText.indexOf('=') === -1) {
                 this.problemText = this.problemText.slice(0, -1);
-                this.output();
+                this.output(problemText);
             }
         },
         
-        output: function(newLine = false, output) {
-            if (newLine) {
-                screen.insertAdjacentHTML('beforeend', '<p class="line">= ' + output + '</p>');
-            } else if (screen.lastElementChild.innerText.indexOf('=') !== -1) {
-                screen.insertAdjacentHTML('beforeend', '<p class="line">' + this.problemText + '</p>');
-            } else {
-                screen.lastElementChild.innerHTML = this.problemText;
-            }
-            
-            if (screen.children.length > 3) {
-                screen.children[0].remove();
-            }
+        output: function(output) {
+            display.innerHTML = output;
         },
         
         clear: function () {
             this.problemText =  '';
             this.tempResult = '';
-            screen.innerHTML = '<p class="line">0</p>';
+            display.innerHTML = '0';
         }
     }
 

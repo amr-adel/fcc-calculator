@@ -50,18 +50,6 @@ html {
     border-bottom: 1px solid #cfd6d9;
 }
 
-.line-wrap {
-    position: absolute;
-    right: 20px;
-    bottom: 10px;
-}
-
-.line:last-child {
-    font-size: 30px;
-    color: #636e72;
-    line-height: 46px;
-}
-
 .btn {
     background-color: #dfe6e9;
     border-radius: 3px;
