@@ -15,7 +15,7 @@ html {
 .calculator {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 190px repeat(5, 1fr);
+    grid-template-rows: 100px repeat(5, 1fr);
     grid-gap: 10px;
     width: 80vw;
     max-width: 600px;
@@ -36,9 +36,9 @@ html {
     text-align: right;
     position: relative;
     overflow: hidden;
-    font-size: 30px;
+    font-size: 36px;
     color: #636e72;
-    line-height: 46px;
+    line-height: 70px;
 }
 
 .title {
