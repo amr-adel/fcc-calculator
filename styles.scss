@@ -4,11 +4,11 @@
     --blue: #74b9ff;
     --green: #00b894;
 
-    --red: #f16065;
-    --red-dark: #e16065;
+    --accent: #f16065;
+    --accent-dark: #e16065;
 
     --white: #dfe6e9;
-    --grey: #cfd6d9;
+    --gray: #cfd6d9;
 
     --black: #636e72;
 
@@ -115,28 +115,28 @@ body {
 #clear,
 #equals {
     color: var(--white);
-    background-color: var(--red);
+    background-color: var(--accent);
 }
 
 #clear:hover,
 #equals:hover {
-    background-color: var(--red-dark);
+    background-color: var(--accent-dark);
 }
 
 #clear:active,
 #equals:active {
-    color: var(--red);
-    background-color: var(--grey);
+    color: var(--accent);
+    background-color: var(--gray);
 }
 
 .btn:hover {
-    background-color: var(--grey);
+    background-color: var(--gray);
     box-shadow: 0 1px 3px rgba(99, 110, 114, .6);
 }
 
 .btn:active {
     color: var(--white);
-    background-color: var(--red-dark);
+    background-color: var(--accent-dark);
 }
 
 /* Modal ====================================================== */
@@ -164,7 +164,7 @@ body {
         
         &:hover,
         &:focus {
-            background-color: var(--red);
+            background-color: var(--accent);
             box-shadow: var(--shadow);
         }
 
@@ -195,7 +195,7 @@ body {
     
     &__toggle:checked ~ &__btn {
         
-        background-color: var(--red-dark);
+        background-color: var(--accent-dark);
         border-radius: 10rem;
         bottom: 2rem;
         right: 1rem;
@@ -279,7 +279,7 @@ body {
 
         & a:link,
         & a:visited {
-            color: var(--red);
+            color: var(--accent);
 
             &:hover {
                 text-decoration: underline;
@@ -289,13 +289,14 @@ body {
 
     &__follow {
         flex-basis: 40%;
-        background-color: var(--blue);
+        background-color: var(--accent-dark);
         border-radius: 3px;
         transition: all .5s ease-out .5s;
         
 
-        & .info__title {
-            color: var(--black);
+        & .info__title,
+        & .info__text {
+            color: var(--white);
         }
     }
 

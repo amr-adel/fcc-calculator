@@ -2,10 +2,10 @@
   --rad: 4rem;
   --blue: #74b9ff;
   --green: #00b894;
-  --red: #f16065;
-  --red-dark: #e16065;
+  --accent: #f16065;
+  --accent-dark: #e16065;
   --white: #dfe6e9;
-  --grey: #cfd6d9;
+  --gray: #cfd6d9;
   --black: #636e72;
   --transparent: rgba(178, 190, 195, .6);
   --shadow: 0 2rem 6rem rgba(99, 110, 114, .2); }
@@ -137,24 +137,24 @@ body {
 #clear,
 #equals {
   color: var(--white);
-  background-color: var(--red); }
+  background-color: var(--accent); }
 
 #clear:hover,
 #equals:hover {
-  background-color: var(--red-dark); }
+  background-color: var(--accent-dark); }
 
 #clear:active,
 #equals:active {
-  color: var(--red);
-  background-color: var(--grey); }
+  color: var(--accent);
+  background-color: var(--gray); }
 
 .btn:hover {
-  background-color: var(--grey);
+  background-color: var(--gray);
   box-shadow: 0 1px 3px rgba(99, 110, 114, 0.6); }
 
 .btn:active {
   color: var(--white);
-  background-color: var(--red-dark); }
+  background-color: var(--accent-dark); }
 
 /* Modal ====================================================== */
 .info__toggle {
@@ -175,7 +175,7 @@ body {
   z-index: 10;
   cursor: pointer; }
   .info__btn:hover, .info__btn:focus {
-    background-color: var(--red);
+    background-color: var(--accent);
     box-shadow: var(--shadow); }
   .info__btn .close,
   .info__btn .open {
@@ -196,7 +196,7 @@ body {
     transform: translateY(0); }
 
 .info__toggle:checked ~ .info__btn {
-  background-color: var(--red-dark);
+  background-color: var(--accent-dark);
   border-radius: 10rem;
   bottom: 2rem;
   right: 1rem; }
@@ -261,18 +261,19 @@ body {
     margin-bottom: 1rem; }
   .info__text a:link,
   .info__text a:visited {
-    color: var(--red); }
+    color: var(--accent); }
     .info__text a:link:hover,
     .info__text a:visited:hover {
       text-decoration: underline; }
 
 .info__follow {
   flex-basis: 40%;
-  background-color: var(--blue);
+  background-color: var(--accent-dark);
   border-radius: 3px;
   transition: all .5s ease-out .5s; }
-  .info__follow .info__title {
-    color: var(--black); }
+  .info__follow .info__title,
+  .info__follow .info__text {
+    color: var(--white); }
 
 .info__social {
   display: flex;
