@@ -141,13 +141,13 @@ body {
 
 /* Modal ====================================================== */
 
-.info {
+.modal {
     
-    &__toggle {
+    &__toggle-input {
         display: none;
     }
     
-    &__btn {
+    &__toggle-label {
         position: fixed;
         bottom: 0;
         right: 0;
@@ -175,7 +175,7 @@ body {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            transition: opacity .3s ease-out;
+            transition: all .3s ease-out;
         }
 
         & .close {
@@ -183,22 +183,30 @@ body {
         }
     }
     
-    &__toggle:checked ~ &__modal {
+    &__toggle-input:checked ~ &__container {
         opacity: 1;
         transform: scale(1, 1);
 
-        & .info__wrapper > div {
+        & .modal__content-wrapper > div {
             opacity: 1;
             transform: translateY(0);
         }
     }
     
-    &__toggle:checked ~ &__btn {
+    &__toggle-input:checked ~ &__toggle-label {
         
-        background-color: var(--accent-dark);
+        background-color: var(--accent);
         border-radius: 10rem;
         bottom: 2rem;
         right: 1rem;
+        
+        &:hover {
+            background-color: var(--accent-dark);
+
+            & .close {
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+        }
         
         & .close {
             opacity: 1;
@@ -209,7 +217,7 @@ body {
         }
     }
     
-    &__modal {
+    &__container {
         opacity: 0;
         position: fixed;
         width: 100%;
@@ -226,7 +234,7 @@ body {
         align-items: center;
     }
 
-    &__wrapper {
+    &__content-wrapper {
         background-color: var(--white);
         padding: 4rem;
         width: 70vw;
@@ -243,7 +251,7 @@ body {
         }
     }
 
-    &__about {
+    & .description {
         flex-basis: 60%;
         transition: all .5s ease-out .4s;
     }
@@ -287,47 +295,48 @@ body {
         }
     }
 
-    &__follow {
+    & .about {
         flex-basis: 40%;
         background-color: var(--accent-dark);
         border-radius: 3px;
         transition: all .5s ease-out .5s;
         
 
-        & .info__title,
-        & .info__text {
+        & .modal__title,
+        & .modal__text {
             color: var(--white);
         }
-    }
-
-    &__social {
-        display: flex;
-        list-style: none;
-        justify-content: center;
-        margin-top: 3rem;
-        color: var(--white);
-
-        & > li {
-            display: block;
-            width: 2rem;
-            height: 2rem;
-            font-size: 2rem;
-            transition: transform .2s ease-out;
-
-            &:not(:last-child) {
-                margin-right: 1.5rem;
-            }
-
-            &:hover {
-                border-bottom: 2px solid var(--black);
-                height: 2.5rem;
-                transform: translateY(-3px);
-            }
-
-            & > a > i {
-                width: 100%;
-                height: 100%;
+        
+        &__social-icons {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            margin-top: 3rem;
+            color: var(--white);
+    
+            & > li {
+                display: block;
+                width: 2rem;
+                height: 2rem;
+                font-size: 2rem;
+                transition: transform .2s ease-out;
+    
+                &:not(:last-child) {
+                    margin-right: 1.5rem;
+                }
+    
+                &:hover {
+                    border-bottom: 2px solid var(--black);
+                    height: 2.5rem;
+                    transform: translateY(-3px);
+                }
+    
+                & > a > i {
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
     }
+
 }
