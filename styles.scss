@@ -246,9 +246,9 @@ body {
         max-height: 80vh;
         border-radius: 3px;
         overflow: auto;
-
+        
         display: flex;
-
+        
         & > div {
             padding: 2rem 4rem;
             opacity: 0;
@@ -335,4 +335,36 @@ body {
         }
     }
 
+}
+
+/* Media Quiries ================================================================== */
+
+@media screen and (max-width: 850px) {
+    html {
+        font-size: 55%;
+    }
+
+    .modal__content-wrapper {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 50%;
+    }
+
+    .modal__content-wrapper {
+        width: 90vw;
+        flex-direction: column;
+        padding: 2rem;
+
+        & > div {
+            padding: 2rem;
+        }
+
+        & .about__social-icons svg {
+            transform: scale(1);
+        }
+    }
 }

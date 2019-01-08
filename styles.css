@@ -296,3 +296,22 @@ body {
       transition: transform .2s ease-out; }
       .modal .about__social-icons svg:hover {
         transform: scale(1.2); }
+
+/* Media Quiries ================================================================== */
+@media screen and (max-width: 850px) {
+  html {
+    font-size: 55%; }
+  .modal__content-wrapper {
+    width: 80vw; } }
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 50%; }
+  .modal__content-wrapper {
+    width: 90vw;
+    flex-direction: column;
+    padding: 2rem; }
+    .modal__content-wrapper > div {
+      padding: 2rem; }
+    .modal__content-wrapper .about__social-icons svg {
+      transform: scale(1); } }
