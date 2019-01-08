@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <title>Simple JavaScript Calculator</title>
 </head>
+
 <body>
-    
+
     <section class="calculator" id="calculator">
         <div class="display" id="display">
-           0
+            0
         </div>
-        
+
         <div class="btn" id="clear">AC</div>
         <div class="btn" id="del">⟵</div>
         <div class="btn" id="divide">÷</div>
@@ -23,7 +24,7 @@
         <div class="btn" id="add">+</div>
         <div class="btn" id="decimal">.</div>
         <div class="btn" id="equals">=</div>
-        
+
         <div class="btn" id="zero">0</div>
         <div class="btn" id="one">1</div>
         <div class="btn" id="two">2</div>
@@ -34,13 +35,24 @@
         <div class="btn" id="seven">7</div>
         <div class="btn" id="eight">8</div>
         <div class="btn" id="nine">9</div>
-        
+
     </section>
     <aside class="modal">
         <input type="checkbox" class="modal__toggle-input" id="modal-toggle-input">
 
-        <label for="modal-toggle-input" class="modal__toggle-label"><i class="fas fa-info open"></i><i class="fas fa-times close"></i></label>
-    
+        <label for="modal-toggle-input" class="modal__toggle-label">
+            <span class="open">
+                <svg>
+                    <use xlink:href="icons.svg#info"></use>
+                </svg>
+            </span>
+            <span class="close">
+                <svg>
+                    <use xlink:href="icons.svg#times"></use>
+                </svg>
+            </span>
+        </label>
+
         <section class="modal__container">
             <div class="modal__content-wrapper">
                 <div class="description">
@@ -48,10 +60,14 @@
                         JavaScript Calculator
                     </h3>
                     <p class="modal__text">
-                        This project was part of the <a href="https://learn.freecodecamp.org" target="_blank">FreeCodeCamp</a>'s "Front End Libraries Certification", which requires building  a calculator using JavaScript, with certain <a href="https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator" target="_blank">user stories</a> met.
+                        This project was part of the <a href="https://learn.freecodecamp.org" target="_blank">FreeCodeCamp</a>'s
+                        "Front End Libraries Certification", which requires building a calculator using JavaScript,
+                        with certain <a href="https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator"
+                            target="_blank">user stories</a> met.
                     </p>
                     <p class="modal__text">
-                        Interested in code? Check the project's repository on <a href="https://github.com/amr-adel/fcc-calculator" target="_blank">GitHub</a>.
+                        Interested in code? Check the project's repository on <a href="https://github.com/amr-adel/fcc-calculator"
+                            target="_blank">GitHub</a>.
                     </p>
                 </div>
                 <div class="about">
@@ -59,21 +75,48 @@
                         Get in touch
                     </h3>
                     <p class="modal__text">
-                        Hey, I'm Amr, and I would love to hear your thoughts about this project and any suggestions to make it better. Technical feedback is highly appreciated too.
+                        Hey, I'm Amr, and I would love to hear your thoughts about this project and any suggestions to
+                        make it better. Technical feedback is highly appreciated too.
                     </p>
                     <ul class="about__social-icons">
-                        <li><a href="https://twitter.com/fullstackamr" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/amr-abdelmoez/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="https://github.com/amr-adel" target="_blank"><i class="fab fa-github"></i></a></li>
-                        <li><a href="https://codepen.io/amr-adel/" target="_blank"><i class="fab fa-codepen"></i></a></li>
-                        <li><a href="https://www.freecodecamp.org/amr-adel" target="_blank"><i class="fab fa-free-code-camp"></i></a></li>
+                        <li><a href="https://www.fullstackamr.com/" target="_blank" title="Portfolio">
+                                <svg>
+                                    <use xlink:href="icons.svg#globe"></use>
+                                </svg>
+                            </a></li>
+                        <li><a href="https://twitter.com/fullstackamr/" target="_blank" title="Twitter">
+                                <svg>
+                                    <use xlink:href="icons.svg#twitter"></use>
+                                </svg>
+                            </a></li>
+                        <li><a href="https://www.linkedin.com/in/amr-abdelmoez/" target="_blank" title="LinkedIn">
+                                <svg>
+                                    <use xlink:href="icons.svg#linkedin"></use>
+                                </svg>
+                            </a></li>
+                        <li><a href="https://github.com/amr-adel/" target="_blank" title="GitHub">
+                                <svg>
+                                    <use xlink:href="icons.svg#github"></use>
+                                </svg>
+                            </a></li>
+                        <li><a href="https://codepen.io/amr-adel/" target="_blank" title="CodePen">
+                                <svg>
+                                    <use xlink:href="icons.svg#codepen"></use>
+                                </svg>
+                            </a></li>
+                        <li><a href="https://www.freecodecamp.org/amr-adel/" target="_blank" title="FreeCodeCamp">
+                                <svg>
+                                    <use xlink:href="icons.svg#freecodecamp"></use>
+                                </svg>
+                            </a></li>
                     </ul>
                 </div>
             </div>
         </section>
     </aside>
-    
+
     <script type="text/javascript" src="claculator.js"></script>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
+
 </html>
