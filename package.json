@@ -4,7 +4,7 @@
   "description": "Simple JavaScript Calculator",
   "main": "claculator.js",
   "scripts": {
-    "sass": "node-sass -w styles.scss styles.css"
+    "sass": "node-sass -w css/styles.scss css/styles.css"
   },
   "author": "Amr A. Abdelmoez",
   "license": "ISC",
