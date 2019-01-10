@@ -129,8 +129,12 @@
                         this.problemText = this.problemText.slice(0, -1)
                     }
                     if (this.problemText === '') {
-                        this.problemText = this.tempResult;
-                        this.tempResult = ''
+                        if(this.tempResult === '') {
+                            return null;
+                        } else {
+                            this.problemText = this.tempResult;
+                            this.tempResult = ''
+                        }
                     }
                 } else {
                     this.problemText += this.side;
