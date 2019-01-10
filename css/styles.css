@@ -192,6 +192,7 @@ body {
 
 .modal__toggle-input:checked ~ .modal__container {
   opacity: 1;
+  z-index: 1;
   transform: scale(1, 1); }
   .modal__toggle-input:checked ~ .modal__container .modal__content-wrapper > div {
     opacity: 1;
@@ -222,6 +223,7 @@ body {
   background-color: rgba(4, 4, 4, 0.8);
   transition: all .3s ease-out;
   overflow: hidden;
+  z-index: -1;
   display: flex;
   justify-content: center;
   align-items: center; }
