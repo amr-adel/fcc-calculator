@@ -129,7 +129,7 @@
                         this.problemText = this.problemText.slice(0, -1)
                     }
                     if (this.problemText === '') {
-                        if(this.tempResult === '') {
+                        if (this.tempResult === '') {
                             return null;
                         } else {
                             this.problemText = this.tempResult;
@@ -169,8 +169,18 @@
         },
         equals: function (result) {
             if (result !== undefined) {
-                this.output(result);
-                display.innerHTML = result
+                if (result % 1 != 0) {
+                    let resultStr = result.toString();
+                    let decimals = resultStr.substring(resultStr.indexOf('.'));
+                    if (decimals.length > 7) {
+                        if (+decimals < .000001) {
+                            result = Math.floor(result);
+                        } else {
+                            result = result.toFixed(6);
+                        }
+                    }
+                }
+                display.innerHTML = result;
                 this.tempResult = result;
                 this.problemText = ''
             }
@@ -184,7 +194,7 @@
                 this.output(this.problemText)
             }
         },
-        output: function (output) {
+        output: function () {
             display.innerHTML = this.problemText + this.side
         },
         clear: function () {
