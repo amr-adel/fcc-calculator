@@ -1,5 +1,6 @@
 (function () {
     const display = document.getElementById('display');
+    // Listen to mouse clicks from screen calculator 
     document.getElementById('calculator').addEventListener('click', function (btn) {
         if (btn.target.className === "btn") {
             switch (btn.target.id) {
@@ -60,10 +61,12 @@
             }
         }
     })
+    // Listen to keyboard strokes
     document.addEventListener("keydown", function (key) {
         function KeyTo(id) {
             document.getElementById(id).click()
         }
+        // Filter number and operations keys
         switch (key.keyCode) {
             case 96: case 48:
                 KeyTo('zero');
@@ -119,16 +122,19 @@
         }
     });
     const calculator = {
+        // Add one side of the problem at a time to prevent more than one '.'
         side: '',
         problemText: '',
         tempResult: '',
         input: function (key) {
             if (key === '÷' || key === '-' || key === '+' || key === '×') {
                 if (this.side === '') {
+                    // Change operation to the latest 
                     if (/[-+×÷]$/.test(this.problemText)) {
                         this.problemText = this.problemText.slice(0, -1)
                     }
                     if (this.problemText === '') {
+                        // Prevent starting with operation sign
                         if (this.tempResult === '') {
                             return null;
                         } else {
@@ -143,15 +149,18 @@
                 this.problemText += key
             } else if (key === '.') {
                 this.tempResult = '';
+                // Add '0' before '.' when starting with '.'
                 if (this.side === '' || this.side === '0') {
                     this.side = '0'
                 }
+                // Prevent more than one '.'
                 if (this.side.includes('.')) {
                     return null
                 }
                 this.side += key
             } else {
                 this.tempResult = '';
+                // Prevent starting with zeros
                 if (this.side === '0' && key === '0') {
                     return null
                 }
@@ -163,15 +172,18 @@
             this.output(this.problemText + this.side)
         },
         result: function () {
+            // Evaluation of the problem string
             this.problemText += this.side;
             this.side = '';
             return eval(this.problemText.replace(/×/g, '*').replace(/÷/g, '/'))
         },
         equals: function (result) {
             if (result !== undefined) {
+                // Check if result contains floats
                 if (result % 1 != 0) {
                     let resultStr = result.toString();
                     let decimals = resultStr.substring(resultStr.indexOf('.'));
+                    // Handle results with more than 6 decimals with one millionth precision
                     if (decimals.length > 7) {
                         if (+decimals < .000001) {
                             result = Math.floor(result);
@@ -186,6 +198,7 @@
             }
         },
         backspace: function () {
+            // Remove last character on screen
             if (this.side.length > 0) {
                 this.side = this.side.slice(0, -1);
                 this.output(this.problemText + this.side)
