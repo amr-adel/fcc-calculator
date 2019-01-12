@@ -65,37 +65,37 @@
             document.getElementById(id).click()
         }
         switch (key.keyCode) {
-            case 96:
+            case 96: case 48:
                 KeyTo('zero');
                 break;
-            case 97:
+            case 97: case 49:
                 KeyTo('one');
                 break;
-            case 98:
+            case 98: case 50:
                 KeyTo('two');
                 break;
-            case 99:
+            case 99: case 51:
                 KeyTo('three');
                 break;
-            case 100:
+            case 100: case 52:
                 KeyTo('four');
                 break;
-            case 101:
+            case 101: case 53:
                 KeyTo('five');
                 break;
-            case 102:
+            case 102: case 54:
                 KeyTo('six');
                 break;
-            case 103:
+            case 103: case 55:
                 KeyTo('seven');
                 break;
-            case 104:
+            case 104: case 56:
                 KeyTo('eight');
                 break;
-            case 105:
+            case 105: case 57:
                 KeyTo('nine');
                 break;
-            case 8:
+            case 8: case 46:
                 KeyTo('del');
                 break;
             case 111:
