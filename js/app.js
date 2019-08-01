@@ -131,7 +131,13 @@
                 if (this.side === '') {
                     // Change operation to the latest 
                     if (/[-+×÷]$/.test(this.problemText)) {
-                        this.problemText = this.problemText.slice(0, -1)
+                      if (!this.problemText.endsWith('-') && key === '-') {
+                        // DON't remove /[+×÷]/
+                      } else {
+                        do {
+                          this.problemText = this.problemText.slice(0, -1)
+                        } while (/[-+×÷]$/.test(this.problemText))
+                      }
                     }
                     if (this.problemText === '') {
                         // Prevent starting with operation sign
