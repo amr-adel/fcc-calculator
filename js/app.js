@@ -1,5 +1,11 @@
 (function () {
     const display = document.getElementById('display');
+    // Close modal upon clicking the dark background
+    document.querySelector(".modal__container").addEventListener('click', () => {
+        if (event.target.className === 'modal__container') {
+            document.getElementById("modal-toggle-input").click()
+        }
+      })
     // Listen to mouse clicks from screen calculator 
     document.getElementById('calculator').addEventListener('click', function (btn) {
         if (btn.target.className === "btn") {
