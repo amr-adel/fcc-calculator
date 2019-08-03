@@ -183,6 +183,7 @@ body {
   .modal__toggle-label .open {
     display: block;
     position: absolute;
+    height: var(--icon-size);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -269,7 +270,8 @@ body {
     margin-bottom: 1rem; }
   .modal__text a:link,
   .modal__text a:visited {
-    color: var(--accent); }
+    color: var(--accent);
+    text-decoration: none; }
     .modal__text a:link:hover,
     .modal__text a:visited:hover {
       text-decoration: underline; }
