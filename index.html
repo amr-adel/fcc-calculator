@@ -1,127 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
-    <meta name="theme-color" content="#06b899">
-    <meta name="application-name" content="JavaScript Calculator">
-    <meta name="description" content="Simple calculator built with pure JavaScript.">
-    <link rel="author" href="https://www.fullstackamr.com/">
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
+    <meta name="theme-color" content="#06b899" />
+    <meta name="application-name" content="JavaScript Calculator" />
+    <meta name="description" content="Simple calculator built with pure JavaScript." />
+    <link rel="author" href="https://www.fullstackamr.com/" />
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
     <title>JavaScript Calculator | Fullstack Amr</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <section class="calculator" id="calculator">
-        <div class="display" id="display">
-            0
-        </div>
+      <div class="display" id="display">
+        0
+      </div>
 
-        <div class="btn" id="clear">AC</div>
-        <div class="btn" id="del">⟵</div>
-        <div class="btn" id="divide">÷</div>
-        <div class="btn" id="multiply">×</div>
-        <div class="btn" id="subtract">‐</div>
-        <div class="btn" id="add">+</div>
-        <div class="btn" id="decimal">.</div>
-        <div class="btn" id="equals">=</div>
+      <div class="btn" id="clear">AC</div>
+      <div class="btn" id="del">⟵</div>
+      <div class="btn" id="divide">÷</div>
+      <div class="btn" id="multiply">×</div>
+      <div class="btn" id="subtract">‐</div>
+      <div class="btn" id="add">+</div>
+      <div class="btn" id="decimal">.</div>
+      <div class="btn" id="equals">=</div>
 
-        <div class="btn" id="zero">0</div>
-        <div class="btn" id="one">1</div>
-        <div class="btn" id="two">2</div>
-        <div class="btn" id="three">3</div>
-        <div class="btn" id="four">4</div>
-        <div class="btn" id="five">5</div>
-        <div class="btn" id="six">6</div>
-        <div class="btn" id="seven">7</div>
-        <div class="btn" id="eight">8</div>
-        <div class="btn" id="nine">9</div>
-
+      <div class="btn" id="zero">0</div>
+      <div class="btn" id="one">1</div>
+      <div class="btn" id="two">2</div>
+      <div class="btn" id="three">3</div>
+      <div class="btn" id="four">4</div>
+      <div class="btn" id="five">5</div>
+      <div class="btn" id="six">6</div>
+      <div class="btn" id="seven">7</div>
+      <div class="btn" id="eight">8</div>
+      <div class="btn" id="nine">9</div>
     </section>
     <aside class="modal">
-        <input type="checkbox" class="modal__toggle-input" id="modal-toggle-input">
+      <input type="checkbox" class="modal__toggle-input" id="modal-toggle-input" />
 
-        <label for="modal-toggle-input" class="modal__toggle-label">
-            <span class="open">
-                <svg>
-                    <use xlink:href="images/icons.svg#info"></use>
-                </svg>
-            </span>
-            <span class="close">
-                <svg>
-                    <use xlink:href="images/icons.svg#times"></use>
-                </svg>
-            </span>
-        </label>
+      <label for="modal-toggle-input" class="modal__toggle-label">
+        <span class="open">
+          <svg>
+            <use xlink:href="images/icons.svg#info"></use>
+          </svg>
+        </span>
+        <span class="close">
+          <svg>
+            <use xlink:href="images/icons.svg#times"></use>
+          </svg>
+        </span>
+      </label>
 
-        <section class="modal__container">
-            <div class="modal__content-wrapper">
-                <div class="description">
-                    <h3 class="modal__title">
-                        JavaScript Calculator
-                    </h3>
-                    <p class="modal__text">
-                        This project was part of the <a href="https://learn.freecodecamp.org" target="_blank">FreeCodeCamp</a>'s
-                        "Front End Libraries Certification", which requires building a calculator using JavaScript,
-                        with certain <a href="https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator"
-                            target="_blank">user stories</a> to be met.
-                    </p>
-                    <p class="modal__text">
-                        Interested in code? Check the project's repository on <a href="https://github.com/amr-adel/fcc-calculator"
-                            target="_blank">GitHub</a>.
-                    </p>
-                </div>
-                <div class="about">
-                    <h3 class="modal__title">
-                        Get in touch
-                    </h3>
-                    <p class="modal__text">
-                        Hey, I'm Amr, and I would love to hear your thoughts about this project and any suggestions to
-                        make it better. Technical feedback is highly appreciated too.
-                    </p>
-                    <ul class="about__social-icons">
-                        <li><a href="https://www.fullstackamr.com/" target="_blank" title="Portfolio">
-                                <svg>
-                                    <use xlink:href="images/icons.svg#globe"></use>
-                                </svg>
-                            </a></li>
-                        <li><a href="https://twitter.com/fullstackamr/" target="_blank" title="Twitter">
-                                <svg>
-                                    <use xlink:href="images/icons.svg#twitter"></use>
-                                </svg>
-                            </a></li>
-                        <li><a href="https://www.linkedin.com/in/amr-abdelmoez/" target="_blank" title="LinkedIn">
-                                <svg>
-                                    <use xlink:href="images/icons.svg#linkedin"></use>
-                                </svg>
-                            </a></li>
-                        <li><a href="https://github.com/amr-adel/" target="_blank" title="GitHub">
-                                <svg>
-                                    <use xlink:href="images/icons.svg#github"></use>
-                                </svg>
-                            </a></li>
-                        <li><a href="https://codepen.io/amr-adel/" target="_blank" title="CodePen">
-                                <svg>
-                                    <use xlink:href="images/icons.svg#codepen"></use>
-                                </svg>
-                            </a></li>
-                        <li><a href="https://www.freecodecamp.org/amr-adel/" target="_blank" title="FreeCodeCamp">
-                                <svg>
-                                    <use xlink:href="images/icons.svg#freecodecamp"></use>
-                                </svg>
-                            </a></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+      <section class="modal__container">
+        <div class="modal__content-wrapper">
+          <div class="description">
+            <h3 class="modal__title">
+              JavaScript Calculator
+            </h3>
+            <p class="modal__text">This project was part of the <a href="https://learn.freecodecamp.org" target="_blank">FreeCodeCamp</a>'s "Front End Libraries Certification", which requires building a calculator using JavaScript, with certain <a href="https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-javascript-calculator" target="_blank">user stories</a> to be met.</p>
+            <p class="modal__text">Interested in code? Check the project's repository on <a href="https://github.com/amr-adel/fcc-calculator" target="_blank">GitHub</a>.</p>
+          </div>
+          <div class="about">
+            <h3 class="modal__title">
+              Get in touch
+            </h3>
+            <p class="modal__text">
+              Hey, I'm Amr, and I would love to hear your thoughts about this project and any suggestions to make it better. Technical feedback is highly appreciated too.
+            </p>
+            <ul class="about__social-icons">
+              <li>
+                <a href="https://www.fullstackamr.com/" target="_blank" title="Portfolio">
+                  <svg>
+                    <use xlink:href="images/icons.svg#globe"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/fullstackamr/" target="_blank" title="Twitter">
+                  <svg>
+                    <use xlink:href="images/icons.svg#twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/amr-abdelmoez/" target="_blank" title="LinkedIn">
+                  <svg>
+                    <use xlink:href="images/icons.svg#linkedin"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/amr-adel/" target="_blank" title="GitHub">
+                  <svg>
+                    <use xlink:href="images/icons.svg#github"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://codepen.io/amr-adel/" target="_blank" title="CodePen">
+                  <svg>
+                    <use xlink:href="images/icons.svg#codepen"></use>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.freecodecamp.org/amr-adel/" target="_blank" title="FreeCodeCamp">
+                  <svg>
+                    <use xlink:href="images/icons.svg#freecodecamp"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </aside>
 
     <script type="text/javascript" src="js/app.js"></script>
     <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
-</body>
-
+  </body>
 </html>
