@@ -12,6 +12,7 @@
     side: '',
     problemText: '',
     tempResult: '',
+    // eslint-disable-next-line consistent-return
     input(key) {
       if (key === '÷' || key === '-' || key === '+' || key === '×') {
         if (this.side === '') {
@@ -61,7 +62,6 @@
         this.side += key;
       }
       this.output(this.problemText + this.side);
-      return true;
     },
     result() {
       // Evaluation of the problem string
